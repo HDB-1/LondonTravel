@@ -3,7 +3,9 @@ import Axios from 'axios';
 import { BrowserRouter as Router , Switch, Route } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import LineCard from '../components/LineCard';
+import TubeMap from '../components/TubeMap';
 import '../styling/App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class App extends Component {
 
@@ -57,7 +59,7 @@ export default class App extends Component {
           <Route exact path="/">
             <p>Welcome to the app, get London travel info</p>
           </Route>
-          <Route path="/linestatus">
+          <Route exact path="/linestatus">
             <div className="flex-container">
             {lineData.map(line => {
               let colour = lineColour[line.id]
@@ -67,6 +69,9 @@ export default class App extends Component {
                 status={line.lineStatuses[0]["statusSeverityDescription"]}
                 reason={line.lineStatuses[0]["reason"]} />)})}
                 </div>
+          </Route>
+          <Route exact path="/map">
+            <TubeMap />
           </Route>
         </Switch>
       </Router>
