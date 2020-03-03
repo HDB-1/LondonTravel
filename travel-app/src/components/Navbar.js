@@ -1,5 +1,4 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
 import '../styling/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav } from 'react-bootstrap';
@@ -18,12 +17,6 @@ function NavBar() {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-
-            
-            {/* <Link to="/">Home</Link>
-            <Link to="/linestatus">Lines</Link>
-            <Link to="/map">Tube Map</Link> */}
-
         </div>
     )
 }

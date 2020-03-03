@@ -16,7 +16,7 @@ export default class App extends Component {
       lineData: [],
       lineColour: {
         bakerloo: '#894E24',
-        central: '##DC251F',
+        central: '#DC251F',
         circle: '#F8CE00',
         district: '#197229',
         "hammersmith-city": "#D799AF",
@@ -62,7 +62,7 @@ export default class App extends Component {
           <Route exact path="/linestatus">
             <div className="flex-container">
             {lineData.map(line => {
-              let colour = lineColour[line.id]
+              let colour = { backgroundColor: lineColour[line.id] }
               return (<LineCard
                 name={line.name}
                 colour={colour}

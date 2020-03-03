@@ -10,4 +10,5 @@ div[class="card"] {
 
 div[class="card-header"] {
     text-align: center;
+    color: rgba(255, 255, 255, 0.893);
 }
