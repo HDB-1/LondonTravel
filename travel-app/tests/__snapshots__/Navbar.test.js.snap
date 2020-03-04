@@ -33,8 +33,10 @@ exports[`shallow Navbar should render correctly 1`] = `
               "render": [Function],
             }
           }
+          className="link"
           disabled={false}
           href="/"
+          id="home_link"
         >
           Home
         </NavLink>
@@ -46,8 +48,10 @@ exports[`shallow Navbar should render correctly 1`] = `
               "render": [Function],
             }
           }
+          className="link"
           disabled={false}
           href="/linestatus"
+          id="line_link"
         >
           Lines
         </NavLink>
@@ -59,8 +63,10 @@ exports[`shallow Navbar should render correctly 1`] = `
               "render": [Function],
             }
           }
+          className="link"
           disabled={false}
           href="/map"
+          id="map_link"
         >
           Tube Map
         </NavLink>
@@ -72,8 +78,10 @@ exports[`shallow Navbar should render correctly 1`] = `
               "render": [Function],
             }
           }
+          className="link"
           disabled={false}
           href="/weather"
+          id="weather_link"
         >
           Weather
         </NavLink>
