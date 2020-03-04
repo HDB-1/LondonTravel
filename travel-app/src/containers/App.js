@@ -5,8 +5,10 @@ import Navbar from '../components/Navbar';
 import LineCard from '../components/LineCard';
 import TubeMap from '../components/TubeMap';
 import Weather from '../components/Weather';
+import NotFound from '../components/NotFound';
+import Homepage from '../components/Homepage';
 import '../styling/App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class App extends Component {
 
@@ -88,11 +90,10 @@ export default class App extends Component {
     let { lineData, lineColour, weather } = this.state;
     return (
       <Router>
-        {console.log(this.state.weather.condition)}
         <Navbar/>
         <Switch>
           <Route exact path="/">
-            <p>Welcome to the app, get London travel info</p>
+            <Homepage />
           </Route>
           <Route exact path="/linestatus">
             <div className="flex-container">
@@ -116,6 +117,9 @@ export default class App extends Component {
             wind_degree={weather.wind_degree}
             // condition={weather.condition.text}
             />
+          </Route>
+          <Route>
+            <NotFound />
           </Route>
         </Switch>
       </Router>

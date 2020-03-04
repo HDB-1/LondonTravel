@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shallow Navbar should render correctly 1`] = `
+<div>
+  <Navbar
+    bg="primary"
+    collapseOnSelect={false}
+    expand="lg"
+    variant="dark"
+  >
+    <NavbarBrand
+      href=""
+    >
+      London Travel
+    </NavbarBrand>
+    <NavbarToggle
+      aria-controls="basic-navbar-nav"
+      label="Toggle navigation"
+    />
+    <NavbarCollapse
+      id="basic-navbar-nav"
+    >
+      <Nav
+        className="mr-auto"
+        fill={false}
+        justify={false}
+      >
+        <NavLink
+          as={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "SafeAnchor",
+              "render": [Function],
+            }
+          }
+          disabled={false}
+          href="/"
+        >
+          Home
+        </NavLink>
+        <NavLink
+          as={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "SafeAnchor",
+              "render": [Function],
+            }
+          }
+          disabled={false}
+          href="/linestatus"
+        >
+          Lines
+        </NavLink>
+        <NavLink
+          as={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "SafeAnchor",
+              "render": [Function],
+            }
+          }
+          disabled={false}
+          href="/map"
+        >
+          Tube Map
+        </NavLink>
+        <NavLink
+          as={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "SafeAnchor",
+              "render": [Function],
+            }
+          }
+          disabled={false}
+          href="/weather"
+        >
+          Weather
+        </NavLink>
+      </Nav>
+    </NavbarCollapse>
+  </Navbar>
+</div>
+`;

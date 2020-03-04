@@ -1,9 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`shallow app should render correctly 1`] = `
-<div>
-  <p>
-    App container
-  </p>
-</div>
+<Component>
+  <NavBar />
+  <Switch>
+    <Route
+      exact={true}
+      path="/"
+    >
+      <Homepage />
+    </Route>
+    <Route
+      exact={true}
+      path="/linestatus"
+    >
+      <div
+        className="flex-container"
+      />
+    </Route>
+    <Route
+      exact={true}
+      path="/map"
+    >
+      <TubeMap />
+    </Route>
+    <Route
+      exact={true}
+      path="/weather"
+    >
+      <Weather />
+    </Route>
+    <Route>
+      <NotFound />
+    </Route>
+  </Switch>
+</Component>
 `;

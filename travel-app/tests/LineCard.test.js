@@ -1,15 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Link } from "react-router-dom";
-import Navbar from '../src/components/Navbar';
+import LineCard from '../src/components/LineCard';
 
-describe("shallow Navbar", () => {
+describe("shallow LineCard", () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Navbar />)
+        wrapper = shallow(<LineCard />)
     })
     it("should render correctly", () => {
         expect(wrapper).toMatchSnapshot();
     })
+    
 })

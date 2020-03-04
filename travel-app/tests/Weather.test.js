@@ -1,13 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Link } from "react-router-dom";
-import Navbar from '../src/components/Navbar';
+import Weather from '../src/components/Weather';
 
-describe("shallow Navbar", () => {
+describe("shallow Weather", () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Navbar />)
+        wrapper = shallow(<Weather />)
     })
     it("should render correctly", () => {
         expect(wrapper).toMatchSnapshot();

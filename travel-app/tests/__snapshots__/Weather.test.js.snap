@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shallow Weather should render correctly 1`] = `
+<div>
+  <h1>
+    Weather
+  </h1>
+  <p>
+    Temperature: 
+  </p>
+  <p>
+    Feels Like: 
+  </p>
+  <p>
+    Wind: 
+  </p>
+  <p>
+    Wind Bearing: 
+  </p>
+</div>
+`;

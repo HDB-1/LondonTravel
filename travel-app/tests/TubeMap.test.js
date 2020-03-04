@@ -1,13 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Link } from "react-router-dom";
-import Navbar from '../src/components/Navbar';
+import TubeMap from '../src/components/TubeMap';
 
-describe("shallow Navbar", () => {
+describe("shallow TubeMap", () => {
     let wrapper;
 
     beforeEach(() => {
-        wrapper = shallow(<Navbar />)
+        wrapper = shallow(<TubeMap />)
     })
     it("should render correctly", () => {
         expect(wrapper).toMatchSnapshot();
