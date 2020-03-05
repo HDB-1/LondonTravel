@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shallow Navbar should render correctly 1`] = `
+<div>
+  <Navbar
+    bg="primary"
+    collapseOnSelect={false}
+    expand="lg"
+    variant="dark"
+  >
+    <NavbarBrand
+      href=""
+    >
+      London Travel
+    </NavbarBrand>
+    <NavbarToggle
+      aria-controls="basic-navbar-nav"
+      label="Toggle navigation"
+    />
+    <NavbarCollapse
+      id="basic-navbar-nav"
+    >
+      <Nav
+        className="mr-auto"
+        fill={false}
+        justify={false}
+      >
+        <NavLink
+          as={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "SafeAnchor",
+              "render": [Function],
+            }
+          }
+          className="link"
+          disabled={false}
+          href="/"
+          id="home_link"
+        >
+          Home
+        </NavLink>
+        <NavLink
+          as={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "SafeAnchor",
+              "render": [Function],
+            }
+          }
+          className="link"
+          disabled={false}
+          href="/linestatus"
+          id="line_link"
+        >
+          Lines
+        </NavLink>
+        <NavLink
+          as={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "SafeAnchor",
+              "render": [Function],
+            }
+          }
+          className="link"
+          disabled={false}
+          href="/map"
+          id="map_link"
+        >
+          Tube Map
+        </NavLink>
+        <NavLink
+          as={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "displayName": "SafeAnchor",
+              "render": [Function],
+            }
+          }
+          className="link"
+          disabled={false}
+          href="/weather"
+          id="weather_link"
+        >
+          Weather
+        </NavLink>
+      </Nav>
+    </NavbarCollapse>
+  </Navbar>
+</div>
+`;
