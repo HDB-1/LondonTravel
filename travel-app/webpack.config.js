@@ -1,20 +1,3 @@
-// module.exports = {
-//     module: {
-//       rules: [
-//         {
-//           test: /\.(png|jpe?g|gif)$/i,
-//           use: [
-//             {
-//               loader: 'file-loader',
-//               options: {
-//                 name: 'dirname/[contenthash].[ext]',
-//               },
-//             },
-//           ],
-//         },
-//       ],
-//     },
-//   };
 module.exports = {
     module: {
         
@@ -23,7 +6,7 @@ module.exports = {
             {
                 loader: MiniCssExtractPlugin.loader,
                 options: {
-                    publicPath: '/src/assets/tube_map.jpeg',
+                    publicPath: '/src/assets/tube_map.png',
                 },
             },
             'css-loader',

@@ -1,13 +1,11 @@
 import React from 'react';
-// import tubemap from '../assets/tube_map.svg';
-import {ReactCompoennt as Map} from '../assets/tube_map.svg';
+import map from '../assets/tube_map.png'
 import '../styling/TubeMap.css';
 
 export default function TubeMap() {
     return (
         <div>
-            {/* <img src={tubemap} alt="Tube Map"/> */}
-            <Map />
+            <img src={map} />
         </div>
     )
 }
