@@ -4,7 +4,7 @@ import '../styling/Weather.css';
 export default class Weather extends Component {
 
     bearings = (wind_degree) => {
-        if(wind_degree > 335 && wind_degree < 26) {
+        if(wind_degree > 0 && wind_degree < 26) {
             return "Northerly"
         } else if(wind_degree > 25 && wind_degree < 65) {
             return "North Easterly"
@@ -20,6 +20,8 @@ export default class Weather extends Component {
             return "Westerly"
         } else if(wind_degree > 295 && wind_degree < 335) {
             return "North Westerly"
+        } else if(wind_degree > 335 && wind_degree < 0) {
+            return "Norhterly"
         }
       }
     componentDidMount() {
