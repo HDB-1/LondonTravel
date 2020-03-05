@@ -62,31 +62,10 @@ export default class App extends Component {
       console.log(err)
     })
   }
-  
-  // bearings = ({this.state.weather.wind_degree}) => {
-  //   if(wind_degree > 335 && wind_degree < 26) {
-  //       return "Northerly"
-  //   } else if(wind_degree > 25 && wind_degree < 65) {
-  //       return "North Easterly"
-  //   } else if(wind_degree > 65 && wind_degree < 115) {
-  //       return "Easterly"
-  //   } else if(wind_degree > 115 && wind_degree < 155) {
-  //       return "South Easterly"
-  //   } else if(wind_degree > 155 && wind_degree < 205) {
-  //       return "Southerly"
-  //   } else if(wind_degree > 205 && wind_degree < 245) {
-  //       return "South Westerly"
-  //   } else if(wind_degree > 245 && wind_degree < 295) {
-  //       return "Westerly"
-  //   } else if(wind_degree > 295 && wind_degree < 335) {
-  //       return "North Westerly"
-  //   }
-  // }
 
   componentDidMount() {
     this.getAllData()
     this.getWeather()
-    // this.bearings()
   }
   
   render() {

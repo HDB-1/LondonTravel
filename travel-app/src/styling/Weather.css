@@ -1,0 +1,21 @@
+div[class="container"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px;
+    width: 366px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+div[class="weather-header"] {
+    text-align: center;
+    color: rgba(40, 40, 40, 0.893);
+    background-image: linear-gradient(to right, rgb(255, 23, 23),rgb(255, 156, 7),rgb(255, 255, 0),rgb(24, 235, 24),rgb(37, 117, 255),rgb(156, 72, 216),rgb(254, 173, 254));
+    width: 100%;
+}
+
+div[class="weather-footer"] {
+    font-variant: small-caps;
+    font-size: 10px;
+}
