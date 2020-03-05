@@ -5,15 +5,19 @@ import Navbar from '../components/Navbar';
 import LineCard from '../components/LineCard';
 import TubeMap from '../components/TubeMap';
 import Weather from '../components/Weather';
+import NotFound from '../components/NotFound';
+import Homepage from '../components/Homepage';
 import '../styling/App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class App extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      weather: {},
+      weather: {
+        condition: {}
+      },
       lineData: [],
       lineColour: {
         bakerloo: '#894E24',
@@ -50,49 +54,28 @@ export default class App extends Component {
     Axios.get("http://api.weatherapi.com/v1/current.json?key=a8c23d3c2d0a43d78c5172954200303&q=london")
     .then(res => {
       this.setState({
-        weather: res.data.current
+        weather: res.data.current,
+        condition: res.data.current.condition
       })
     })
     .catch(err => {
       console.log(err)
     })
   }
-  
-  // bearings = ({this.state.weather.wind_degree}) => {
-  //   if(wind_degree > 335 && wind_degree < 26) {
-  //       return "Northerly"
-  //   } else if(wind_degree > 25 && wind_degree < 65) {
-  //       return "North Easterly"
-  //   } else if(wind_degree > 65 && wind_degree < 115) {
-  //       return "Easterly"
-  //   } else if(wind_degree > 115 && wind_degree < 155) {
-  //       return "South Easterly"
-  //   } else if(wind_degree > 155 && wind_degree < 205) {
-  //       return "Southerly"
-  //   } else if(wind_degree > 205 && wind_degree < 245) {
-  //       return "South Westerly"
-  //   } else if(wind_degree > 245 && wind_degree < 295) {
-  //       return "Westerly"
-  //   } else if(wind_degree > 295 && wind_degree < 335) {
-  //       return "North Westerly"
-  //   }
-  // }
 
   componentDidMount() {
     this.getAllData()
     this.getWeather()
-    // this.bearings()
   }
   
   render() {
     let { lineData, lineColour, weather } = this.state;
     return (
       <Router>
-        {console.log(this.state.weather.condition)}
         <Navbar/>
         <Switch>
           <Route exact path="/">
-            <p>Welcome to the app, get London travel info</p>
+            <Homepage />
           </Route>
           <Route exact path="/linestatus">
             <div className="flex-container">
@@ -114,8 +97,11 @@ export default class App extends Component {
             feelslike_c={weather.feelslike_c}
             wind_mph={weather.wind_mph}
             wind_degree={weather.wind_degree}
-            // condition={weather.condition.text}
+            condition={weather.condition.text}
             />
+          </Route>
+          <Route>
+            <NotFound />
           </Route>
         </Switch>
       </Router>

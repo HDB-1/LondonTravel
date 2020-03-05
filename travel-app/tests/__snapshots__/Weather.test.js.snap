@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shallow Weather should render correctly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="weather-header"
+  >
+    <h2>
+      Weather
+    </h2>
+  </div>
+  <div
+    className="weather-body"
+  >
+    <h3 />
+    <h5>
+      Temp: 
+    </h5>
+    <h5>
+      Feels like: 
+    </h5>
+    <h5>
+      Wind: 
+    </h5>
+    <h5>
+      Wind direction: 
+    </h5>
+  </div>
+  <div
+    className="weather-footer"
+  >
+    <p>
+      Powered by 
+      <a
+        href="https://www.weatherapi.com/"
+        title="Free Weather API"
+      >
+        WeatherAPI.com
+      </a>
+    </p>
+  </div>
+</div>
+`;

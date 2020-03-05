@@ -11,10 +11,10 @@ function NavBar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/linestatus">Lines</Nav.Link>
-                        <Nav.Link href="/map">Tube Map</Nav.Link>
-                        <Nav.Link href="/weather">Weather</Nav.Link>
+                        <Nav.Link className="link" href="/" id="home_link">Home</Nav.Link>
+                        <Nav.Link className="link" href="/linestatus" id="line_link">Lines</Nav.Link>
+                        <Nav.Link className="link" href="/map" id="map_link">Tube Map</Nav.Link>
+                        <Nav.Link className="link" href="/weather" id="weather_link">Weather</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

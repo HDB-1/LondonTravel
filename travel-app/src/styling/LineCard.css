@@ -2,9 +2,8 @@ div[class="card"] {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    width: 400px;
+    margin: 5px;
+    width: 402px;
     border: 2px solid black;
 }
 
@@ -12,3 +11,4 @@ div[class="card-header"] {
     text-align: center;
     color: rgba(255, 255, 255, 0.893);
 }
+
