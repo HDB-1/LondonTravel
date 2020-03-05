@@ -17,5 +17,8 @@ exports[`shallow Weather should render correctly 1`] = `
   <p>
     Wind Bearing: 
   </p>
+  <p>
+    Condition: 
+  </p>
 </div>
 `;

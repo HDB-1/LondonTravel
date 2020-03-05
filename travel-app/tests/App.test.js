@@ -72,7 +72,7 @@ describe("Mounted App", () => {
         expect(wrapper.containsMatchingElement(<NotFound />)).toEqual(true);
       })
     
-    //   it("Navbar should send user to the homepage when clicked", () => {
+    //   it("Navbar should send user to the homepage when click Home", () => {
     //     let wrapper = mount(
     //       <MemoryRouter initialEntries={["/weather"]}>
     //         <App />
@@ -81,10 +81,10 @@ describe("Mounted App", () => {
     //     expect(wrapper.containsMatchingElement(<Weather />)).toEqual(true);
     //     expect(wrapper.containsMatchingElement(<Homepage />)).toEqual(false);
     //     wrapper
-    //       .find(Navbar)
-    //       .find(Link)
-    //       .props({href: '/'})
-    //       .simulate("click", { button: 0 });
+    //         .find(<Navbar />)
+    //         .find("Nav.Link")
+    //         .find("#home_link")
+    //         .simulate("click", { button: 0 });
     //     expect(wrapper.containsMatchingElement(<Weather />)).toEqual(false);
     //     expect(wrapper.containsMatchingElement(<Homepage />)).toEqual(true);
     //   });
@@ -105,33 +105,22 @@ describe("testing API", () => {
     beforeEach(() => {
       fetch.resetMocks();
     });
-    // API Request test will fail needs to find way to export function from class
     it("calls API and returns data to me", () => {
-      //Mock fetch response data
       fetch.mockResponseOnce(JSON.stringify({ data: "placeholder12345" }));
-  
-    //   //assert on the response
       linestatusAPIRequest().then(res => {
         expect(res.data).toEqual("placeholder12345");
       });
-
-      //assert on the time called and arguments given to fetch
-      expect(fetch.mock.calls.length).toEqual(1); // fetch.mock.calls = nested array [[]] which contains the URL.
+      expect(fetch.mock.calls.length).toEqual(1);
       expect(fetch.mock.calls[0][0]).toEqual(
         'https://api.tfl.gov.uk/Line/Mode/tube%2Cdlr%2Coverground%2Ctram/Status'
       );
     });
     it("calls API and returns data to me", () => {
-      //Mock fetch response data
       fetch.mockResponseOnce(JSON.stringify({ data: "placeholder12345" }));
-  
-    //   //assert on the response
       weatherAPIRequest().then(res => {
         expect(res.data).toEqual("placeholder12345");
       });
-
-      //assert on the time called and arguments given to fetch
-      expect(fetch.mock.calls.length).toEqual(1); // fetch.mock.calls = nested array [[]] which contains the URL.
+      expect(fetch.mock.calls.length).toEqual(1);
       expect(fetch.mock.calls[0][0]).toEqual(
         'http://api.weatherapi.com/v1/current.json?key=a8c23d3c2d0a43d78c5172954200303&q=london'
       );

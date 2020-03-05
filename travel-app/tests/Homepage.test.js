@@ -11,7 +11,7 @@ describe("shallow Homepage", () => {
     it("should render correctly", () => {
         expect(wrapper).toMatchSnapshot();
     })
-    it("should contain an h1 tag", () => {
-        expect(wrapper.find("h1").length).toEqual(1)
+    it("should contain an h4 tag", () => {
+        expect(wrapper.find("h4").length).toEqual(1)
     })
 })

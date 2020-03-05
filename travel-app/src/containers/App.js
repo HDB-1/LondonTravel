@@ -15,7 +15,9 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      weather: {},
+      weather: {
+        condition: {}
+      },
       lineData: [],
       lineColour: {
         bakerloo: '#894E24',
@@ -52,7 +54,8 @@ export default class App extends Component {
     Axios.get("http://api.weatherapi.com/v1/current.json?key=a8c23d3c2d0a43d78c5172954200303&q=london")
     .then(res => {
       this.setState({
-        weather: res.data.current
+        weather: res.data.current,
+        condition: res.data.current.condition
       })
     })
     .catch(err => {
@@ -115,7 +118,7 @@ export default class App extends Component {
             feelslike_c={weather.feelslike_c}
             wind_mph={weather.wind_mph}
             wind_degree={weather.wind_degree}
-            // condition={weather.condition.text}
+            condition={weather.condition.text}
             />
           </Route>
           <Route>
