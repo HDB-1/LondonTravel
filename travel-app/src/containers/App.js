@@ -54,7 +54,6 @@ export default class App extends Component {
     const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
     Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=london&appid=${API_KEY}`)
     .then(res => {
-      console.log(res)
       this.setState({
         condition: res.data.weather[0],
         main: res.data.main,
