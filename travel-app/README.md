@@ -1,3 +1,5 @@
 London Travel Application
 
-Check Line Status
+A very simple London Tube line status checking app using tfl API
+
+Link: https://london-travel.herokuapp.com/linestatus
