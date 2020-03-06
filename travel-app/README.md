@@ -1,5 +1,8 @@
 London Travel Application
 
-A very simple London Tube line status checking app using tfl API
+A very simple London Tube line status app using tfl API
+Also has a current weather feature
 
-Link: https://london-travel.herokuapp.com/linestatus
+Best suited for iPhone X
+
+Link: https://london-travel-app.herokuapp.com/
