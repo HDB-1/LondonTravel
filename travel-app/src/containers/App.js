@@ -15,9 +15,9 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      weather: {
-        condition: {}
-      },
+      main: {},
+      condition: {},
+      wind: {},
       lineData: [],
       lineColour: {
         bakerloo: '#894E24',
@@ -51,11 +51,14 @@ export default class App extends Component {
   }
 
   getWeather = () => {
-    Axios.get("http://api.weatherapi.com/v1/current.json?key=a8c23d3c2d0a43d78c5172954200303&q=london")
+    const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+    Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=london&appid=${API_KEY}`)
     .then(res => {
+      console.log(res)
       this.setState({
-        weather: res.data.current,
-        condition: res.data.current.condition
+        condition: res.data.weather[0],
+        main: res.data.main,
+        wind: res.data.wind
       })
     })
     .catch(err => {
@@ -69,7 +72,7 @@ export default class App extends Component {
   }
   
   render() {
-    let { lineData, lineColour, weather } = this.state;
+    let { lineData, lineColour, main, wind, condition } = this.state;
     return (
       <Router>
         <Navbar/>
@@ -93,11 +96,12 @@ export default class App extends Component {
           </Route>
           <Route exact path="/weather">
             <Weather 
-            temp_c={weather.temp_c}
-            feelslike_c={weather.feelslike_c}
-            wind_mph={weather.wind_mph}
-            wind_degree={weather.wind_degree}
-            condition={weather.condition.text}
+            wind_mph={wind.speed}
+            wind_degree={wind.deg}
+            temp={main.temp}
+            feelslike={main.feels_like}
+            condition={condition.main}
+            condition_desc={condition.description}
             />
           </Route>
           <Route>

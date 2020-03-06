@@ -16,13 +16,21 @@ exports[`shallow Weather should render correctly 1`] = `
   >
     <h3 />
     <h5>
+      Condition: 
+    </h5>
+    <h5>
       Temp: 
+      NaN
+       C
     </h5>
     <h5>
       Feels like: 
+      NaN
+       C
     </h5>
     <h5>
       Wind: 
+      mph
     </h5>
     <h5>
       Wind direction: 
@@ -34,10 +42,10 @@ exports[`shallow Weather should render correctly 1`] = `
     <p>
       Powered by 
       <a
-        href="https://www.weatherapi.com/"
+        href="https://openweathermap.org/"
         title="Free Weather API"
       >
-        WeatherAPI.com
+        OpenWeatherMap.org
       </a>
     </p>
   </div>
