@@ -51,7 +51,7 @@ export default class App extends Component {
   }
 
   getWeather = () => {
-    Axios.get("http://api.weatherapi.com/v1/current.json?key=a8c23d3c2d0a43d78c5172954200303&q=london")
+    Axios.get("https://api.weatherapi.com/v1/current.json?key=a8c23d3c2d0a43d78c5172954200303&q=london")
     .then(res => {
       this.setState({
         weather: res.data.current,
