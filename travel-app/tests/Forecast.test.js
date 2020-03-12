@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Weather from '../src/components/Weather';
+import Forecast from '../src/components/Forecast';
 
-describe("shallow Weather", () => {
+describe("shallow Forecast", () => {
     let wrapper;
-    let forecast = [{
+    let forecast = {
         main: {
             temp: 282.97
         },
@@ -16,10 +16,10 @@ describe("shallow Weather", () => {
             speed: 10,
             deg: 280
         }
-    }]
+    }
 
     beforeEach(() => {
-        wrapper = shallow(<Weather forecast={forecast}/>)
+        wrapper = shallow(<Forecast forecast={forecast}/>)
     })
     it("should render correctly", () => {
         expect(wrapper).toMatchSnapshot();

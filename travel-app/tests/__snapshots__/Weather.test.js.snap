@@ -1,53 +1,97 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`shallow Weather should render correctly 1`] = `
-<div
-  className="container"
->
+<div>
   <div
-    className="weather-header"
+    className="container"
   >
-    <h2>
-      Weather
-    </h2>
+    <div
+      className="weather-header"
+    >
+      <h2>
+        Weather
+      </h2>
+    </div>
+    <div
+      className="weather-body"
+    >
+      <h3 />
+      <h5>
+        Condition: 
+      </h5>
+      <h5>
+        Temp: 
+        NaN
+         C
+      </h5>
+      <h5>
+        Feels like: 
+        NaN
+         C
+      </h5>
+      <h5>
+        Wind: 
+        mph
+      </h5>
+      <h5>
+        Wind direction: 
+      </h5>
+      <h5>
+        Sunrise: 
+        Invalid Date
+      </h5>
+      <h5>
+        Sunset: 
+        Invalid Date
+      </h5>
+    </div>
+    <div
+      className="weather-footer"
+    >
+      <p>
+        Powered by 
+        <a
+          href="https://openweathermap.org/"
+          title="Free Weather API"
+        >
+          OpenWeatherMap.org
+        </a>
+      </p>
+    </div>
   </div>
+  <br />
   <div
-    className="weather-body"
+    className="container"
   >
-    <h3 />
-    <h5>
-      Condition: 
-    </h5>
-    <h5>
-      Temp: 
-      NaN
-       C
-    </h5>
-    <h5>
-      Feels like: 
-      NaN
-       C
-    </h5>
-    <h5>
-      Wind: 
-      mph
-    </h5>
-    <h5>
-      Wind direction: 
-    </h5>
-  </div>
-  <div
-    className="weather-footer"
-  >
-    <p>
-      Powered by 
-      <a
-        href="https://openweathermap.org/"
-        title="Free Weather API"
-      >
-        OpenWeatherMap.org
-      </a>
-    </p>
+    <div
+      className="forecast-header"
+    >
+      <h2>
+        Forecast
+      </h2>
+    </div>
+    <ul>
+      <Forecast
+        day={
+          Object {
+            "main": Object {
+              "temp": 282.97,
+            },
+            "weather": Array [
+              Object {
+                "description": "light rain",
+                "main": "Rain",
+              },
+            ],
+            "wind": Object {
+              "deg": 280,
+              "speed": 10,
+            },
+          }
+        }
+        key="0"
+      />
+    </ul>
   </div>
 </div>
 `;
