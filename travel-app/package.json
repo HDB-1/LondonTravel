@@ -25,7 +25,7 @@
   },
   "scripts": {
     "heroku-postbuild": "npm install",
-    "start": "node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest --config=jest.config.json --watchAll",
     "eject": "react-scripts eject"

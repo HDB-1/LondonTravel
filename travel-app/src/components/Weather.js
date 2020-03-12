@@ -44,7 +44,7 @@ export default class Weather extends Component {
     }
 
     render() {
-        let { temp, feelslike, wind_mph, wind_degree, condition, condition_desc } = this.props;
+        let { temp, feelslike, wind_mph, wind_degree, condition, condition_desc, forecast } = this.props;
         let direction = this.bearings(wind_degree)
         let temp_final = this.convert_temp(temp)
         let feels_like_final = this.convert_temp(feelslike)
@@ -60,6 +60,7 @@ export default class Weather extends Component {
                     <h5>Feels like: {feels_like_final} C</h5>
                     <h5>Wind: {wind_mph}mph</h5>
                     <h5>Wind direction: {direction}</h5>
+                    <h5>Sunrise: {forecast.cod}</h5>
                 </div> 
                 <div className="weather-footer">
                     <p>Powered by <a href="https://openweathermap.org/" title="Free Weather API">OpenWeatherMap.org</a></p>
