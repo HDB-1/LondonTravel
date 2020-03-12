@@ -26,7 +26,3 @@ div[class="forecast-header"] {
     background-image: linear-gradient(to right, rgb(51, 174, 255), rgb(17, 207, 159));
     width: 100%;
 }
-
-.forecast-body {
-    /* text-align: center; */
-}
