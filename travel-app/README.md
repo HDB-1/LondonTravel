@@ -6,3 +6,5 @@ Also has a current weather feature
 Best suited for iPhone X
 
 Link: https://london-travel-app.herokuapp.com/
+
+Weather 24hr forecast feature implemented but not on deployed site.
