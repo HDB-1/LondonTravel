@@ -15,9 +15,13 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      main: {},
-      condition: {},
-      wind: {},
+      allWeather: {
+        weather: [{}],
+        main: {},
+        wind: {},
+        sun: {}
+      },
+      forecast: [],
       lineData: [],
       lineColour: {
         bakerloo: '#894E24',
@@ -56,10 +60,29 @@ export default class App extends Component {
     Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=london&appid=${API_KEY}`)
     .then(res => {
       this.setState({
-        condition: res.data.weather[0],
-        main: res.data.main,
-        wind: res.data.wind
+        allWeather: {
+          weather: res.data.weather[0],
+          main: res.data.main,
+          wind: res.data.wind,
+          sun: res.data.sys
+        }
       })
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+
+  getForecast = () => {
+    const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+
+    Axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=london&appid=${API_KEY}`)
+    .then(res => {
+      let forecast_list = res.data.list.slice(0,8)
+      this.setState({
+        forecast: forecast_list
+      })
+      console.log(this.state.forecast)
     })
     .catch(err => {
       console.log(err)
@@ -69,10 +92,11 @@ export default class App extends Component {
   componentDidMount() {
     this.getAllData()
     this.getWeather()
+    this.getForecast()
   }
   
   render() {
-    let { lineData, lineColour, main, wind, condition } = this.state;
+    let { lineData, lineColour, allWeather, forecast } = this.state;
     return (
       <Router>
         <Navbar/>
@@ -96,12 +120,16 @@ export default class App extends Component {
           </Route>
           <Route exact path="/weather">
             <Weather 
-            wind_mph={wind.speed}
-            wind_degree={wind.deg}
-            temp={main.temp}
-            feelslike={main.feels_like}
-            condition={condition.main}
-            condition_desc={condition.description}
+            wind_mph={allWeather.wind.speed}
+            wind_degree={allWeather.wind.deg}
+            temp={allWeather.main.temp}
+            feelslike={allWeather.main.feels_like}
+            condition={allWeather.weather.main}
+            condition_desc={allWeather.weather.description}
+            sunrise={allWeather.sun.sunrise}
+            sunset={allWeather.sun.sunset}
+
+            forecast={forecast}
             />
           </Route>
           <Route>
