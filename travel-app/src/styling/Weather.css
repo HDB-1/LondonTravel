@@ -19,3 +19,14 @@ div[class="weather-footer"] {
     font-variant: small-caps;
     font-size: 10px;
 }
+
+div[class="forecast-header"] {
+    text-align: center;
+    color: rgba(248, 245, 245, 0.893);
+    background-image: linear-gradient(to right, rgb(51, 174, 255), rgb(17, 207, 159));
+    width: 100%;
+}
+
+.forecast-body {
+    /* text-align: center; */
+}

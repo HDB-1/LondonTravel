@@ -21,12 +21,7 @@ export default class App extends Component {
         wind: {},
         sun: {}
       },
-      forecast: {
-        weather: {},
-        time: {},
-        main: {},
-        wind: {}
-      },
+      forecast: [],
       lineData: [],
       lineColour: {
         bakerloo: '#894E24',
@@ -83,15 +78,11 @@ export default class App extends Component {
 
     Axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=london&appid=${API_KEY}`)
     .then(res => {
+      let forecast_list = res.data.list.slice(0,8)
       this.setState({
-        forecast: {
-          weather: res.data.list[0].weather[0],
-          time: res.data.list[0].dt_txt,
-          main: res.data.list[0].main,
-          wind: res.data.list[0].wind
-        }
+        forecast: forecast_list
       })
-      console.log(res.data)
+      console.log(this.state.forecast)
     })
     .catch(err => {
       console.log(err)
@@ -135,12 +126,10 @@ export default class App extends Component {
             feelslike={allWeather.main.feels_like}
             condition={allWeather.weather.main}
             condition_desc={allWeather.weather.description}
+            sunrise={allWeather.sun.sunrise}
+            sunset={allWeather.sun.sunset}
 
-            dateTime={forecast.time}
-            forc_condition={forecast.weather.main}
-            forc_condition_desc={forecast.weather.desciption}
-            forc_wind_mph={forecast.wind.speed}
-            forc_wind_degree={forecast.wind.deg}
+            forecast={forecast}
             />
           </Route>
           <Route>
