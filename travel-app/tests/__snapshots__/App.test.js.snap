@@ -28,7 +28,9 @@ exports[`shallow app should render correctly 1`] = `
       exact={true}
       path="/weather"
     >
-      <Weather />
+      <Weather
+        forecast={Array []}
+      />
     </Route>
     <Route>
       <NotFound />
