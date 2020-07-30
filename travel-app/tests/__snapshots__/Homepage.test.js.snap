@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`shallow Homepage should render correctly 1`] = `
-<div>
+<div
+  className="homepage"
+>
   <h4>
-    Welcome to the London Travel App
+    HDB's London Travel App
   </h4>
 </div>
 `;

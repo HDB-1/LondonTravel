@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import '../styling/Weather.css';
+import cloud from '../assets/cloud.png';
+import rain from '../assets/rain.png';
+import snow from '../assets/snow.png';
+import sun_cloud from '../assets/sun-cloud.png';
+import sunny from '../assets/sunny.png';
+import thunder from '../assets/thunder.png';
+import wind from '../assets/wind.png';
 import Forecast from './Forecast';
 
 export default class Weather extends Component {
@@ -26,6 +33,27 @@ export default class Weather extends Component {
         }
     }
 
+    pic_to_desc = () => {
+        let descs = this.props.condition_desc
+        if(descs && descs.includes("rain")) {
+            return rain
+        } else if(descs === "clear sky") {
+            return sunny
+        } else if(descs === "few clouds") {
+            return sun_cloud
+        } else if(descs === "scattered clouds") {
+            return sun_cloud
+        } else if(descs && descs.includes("cloud")) {
+            return cloud
+        } else if(descs && descs.includes("thunder")) {
+            return thunder
+        } else if(descs && descs.includes("wind")) {
+            return wind
+        } else if (descs && descs.includes("snow")) {
+            return snow
+        }
+    }
+
     convert_temp = (temp) => {
         let temp_c = (temp-273.15)
         let temp_final = (Math.round(temp_c * 100) / 100).toFixed(1);
@@ -42,6 +70,7 @@ export default class Weather extends Component {
     componentDidMount() {
         this.bearings()
         this.convert_temp()
+        this.pic_to_desc()
         // this.convert_datetime()
     }
 
@@ -50,6 +79,8 @@ export default class Weather extends Component {
         let direction = this.bearings(wind_degree)
         let temp_final = this.convert_temp(temp)
         let feels_like_final = this.convert_temp(feelslike)
+        let icon = this.pic_to_desc(condition_desc)
+        
         return (
             <div>
                 <div className="flex-container">
@@ -58,8 +89,8 @@ export default class Weather extends Component {
                             <h2>Current Weather</h2>
                         </div>
                         <div className="weather-body">
-                            <h3>{condition}</h3>
-                            <h5>Condition: {condition_desc}</h5>
+                            <img id="icon" src={icon} alt="weather icon" />
+                            <h5>{condition_desc}</h5>
                             <h5>Temp: {temp_final} C</h5>
                             <h5>Feels like: {feels_like_final} C</h5>
                             <h5>Wind: {wind_mph}mph</h5>
