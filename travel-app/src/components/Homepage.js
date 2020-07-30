@@ -1,9 +1,10 @@
 import React from 'react'
+import '../styling/App.css';
 
 export default function Homepage() {
     return (
-        <div>
-            <h4>Welcome to the London Travel App</h4>
+        <div className="homepage">
+            <h4>HDB's London Travel App</h4>
         </div>
     )
 }

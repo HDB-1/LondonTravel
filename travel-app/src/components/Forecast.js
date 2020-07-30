@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import cloud from '../assets/cloud.png';
-import moon from '../assets/moon.png';
 import rain from '../assets/rain.png';
 import snow from '../assets/snow.png';
 import sun_cloud from '../assets/sun-cloud.png';
@@ -108,7 +107,7 @@ export default class Forecast extends Component {
                 <h5>{day.weather[0].main} - {day.weather[0].description}</h5>
                 <h5>Temp: {temp_final} C</h5>
                 <h5>Wind: {day.wind.speed.toFixed(0)}mph - {direction}</h5>
-                <img id="icon" src={icon} />
+                <img id="icon" src={icon} alt="weather icon"/>
                 <h3>--------------------</h3>
             </div> 
 

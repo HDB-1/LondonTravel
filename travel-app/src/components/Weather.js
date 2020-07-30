@@ -46,12 +46,10 @@ export default class Weather extends Component {
     }
 
     render() {
-        let { temp, feelslike, wind_mph, wind_degree, condition, condition_desc, sunrise, sunset, forecast } = this.props;
+        let { temp, feelslike, wind_mph, wind_degree, condition, condition_desc, forecast } = this.props;
         let direction = this.bearings(wind_degree)
         let temp_final = this.convert_temp(temp)
         let feels_like_final = this.convert_temp(feelslike)
-        // let sunrise_final = this.convert_datetime(sunrise)
-        // let sunset_final = this.convert_datetime(sunset)
         return (
             <div>
                 <div className="flex-container">
@@ -66,8 +64,6 @@ export default class Weather extends Component {
                             <h5>Feels like: {feels_like_final} C</h5>
                             <h5>Wind: {wind_mph}mph</h5>
                             <h5>Wind direction: {direction}</h5>
-                            {/* <h5>Sunrise: {sunrise_final}</h5>
-                            <h5>Sunset: {sunset_final}</h5> */}
                         </div> 
                         <div className="weather-footer">
                             <p>Powered by <a href="https://openweathermap.org/" title="Free Weather API">OpenWeatherMap.org</a><br/></p>
