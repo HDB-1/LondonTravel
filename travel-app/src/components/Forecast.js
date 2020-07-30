@@ -47,6 +47,8 @@ export default class Forecast extends Component {
             return sunny
         } else if(descs === "few clouds") {
             return sun_cloud
+        } else if(descs === "scattered clouds") {
+            return sun_cloud
         } else if(descs.includes("cloud")) {
             return cloud
         } else if(descs.includes("thunder")) {
