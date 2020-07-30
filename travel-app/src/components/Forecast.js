@@ -49,7 +49,13 @@ export default class Forecast extends Component {
             return sun_cloud
         } else if(descs.includes("cloud")) {
             return cloud
-        } 
+        } else if(descs.includes("thunder")) {
+            return thunder
+        } else if(descs.includes("wind")) {
+            return wind
+        } else if (descs.includes("snow")) {
+            return snow
+        }
     }
 
     convert_month = () => {
@@ -96,14 +102,12 @@ export default class Forecast extends Component {
 
         return (
             <div className="weather-body">
-                {/* <h5>{day.dt_txt.slice(11,16)} | {day.dt_txt.slice(5,10)}</h5> */}
                 <h5>{day.dt_txt.slice(11,16)} | {day_date} {month}</h5>
                 <h5>{day.weather[0].main} - {day.weather[0].description}</h5>
                 <h5>Temp: {temp_final} C</h5>
                 <h5>Wind: {day.wind.speed.toFixed(0)}mph - {direction}</h5>
                 <img id="icon" src={icon} />
                 <h3>--------------------</h3>
-                <br/>
             </div> 
 
         )
