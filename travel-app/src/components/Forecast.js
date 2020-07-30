@@ -39,32 +39,19 @@ export default class Forecast extends Component {
         return temp_final
     }
 
-    pic_to_desc = (descs) => {
-        // let descs = this.props.day.weather[0].description
+    pic_to_desc = () => {
+        let descs = this.props.day.weather[0].description
         console.log(descs)
         if(descs.includes("rain")) {
-            return "include thingy works"
+            return rain
         } else if(descs === "clear sky") {
-            return "SUNNY ICON"
-        }
+            return sunny
+        } else if(descs === "few clouds") {
+            return sun_cloud
+        } else if(descs.includes("cloud")) {
+            return cloud
+        } 
     }
-    // pic_to_desc = (descs) => {
-    //     // let descs = this.props.day.weather[0].description
-    //     console.log(descs)
-    //     if(descs.includes("rain")) {
-    //         return "include thingy works"
-    //     } else if(descs === "clear sky") {
-    //         return "SUNNY ICON"
-    //     } else if(descs === "few clouds") {
-    //         return "semi cloudy ICON"
-    //     } else if(descs === "wbwokeen 3r" || "shkatered 24f" || "underthrow 34r") {
-    //         return "cloudy!! ICON"
-    //     } else if(descs.includes("cloud")) {
-    //         return "the includes thing works"
-    //     } else if(descs.includes("rain")) {
-    //         return "rainy!! ICON"
-    //     }
-    // }
 
     componentDidMount() {
         this.bearings()
@@ -76,8 +63,7 @@ export default class Forecast extends Component {
         let { day } = this.props;
         let direction = this.bearings(day.wind.deg)
         let temp_final = this.convert_temp(day.main.temp)
-        // let icon = this.pic_to_desc(day.weather[0].description)
-        let icon = this.pic_to_desc("little bit of rain not much")
+        let icon = this.pic_to_desc(day.weather[0].description)
 
         return (
             <div className="weather-body">
@@ -85,8 +71,7 @@ export default class Forecast extends Component {
                 <h5>{day.weather[0].main} - {day.weather[0].description}</h5>
                 <h5>Temp: {temp_final} C</h5>
                 <h5>Wind: {day.wind.speed.toFixed(0)}mph - {direction}</h5>
-                <h2>{icon}</h2>
-                <br/>
+                <img id="icon" src={icon} />
                 <h3>--------------------</h3>
                 <br/>
             </div> 

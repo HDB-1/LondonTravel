@@ -78,7 +78,7 @@ export default class App extends Component {
 
     Axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=london&appid=${API_KEY}`)
     .then(res => {
-      let forecast_list = res.data.list.slice(0,8)
+      let forecast_list = res.data.list
       this.setState({
         forecast: forecast_list
       })
